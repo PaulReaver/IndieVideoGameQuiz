@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--ScrollView enables scrolling-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue_background"
+    tools:context="com.example.android.videogamequiz.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <!--Indie-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:fontFamily="cursive"
+            android:text="@string/indie"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold" />
+
+        <!--Indie Video game quiz-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/video_game_quiz"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/sp_34"
+            android:textStyle="bold" />
+
+        <!--Welcome-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/welcome"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp_20" />
+
+        <!--Name Field-->
+        <EditText
+            android:id="@+id/nameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_32"
+            android:backgroundTint="@color/orange"
+            android:hint="@string/enter_your_name_here"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textSize="@dimen/sp_20" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Question-->
+            <TextView
+                style="@style/questionInGray" />
+
+            <!--1-->
+            <TextView
+                style="@style/questionNumber"
+                android:text="@string/_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <!--Journey question-->
+                <TextView
+                    style="@style/actualQuestion"
+                    android:text="@string/in_journey_what_is_the_goal_of_the_protagonist" />
+
+                <!--Line under question-->
+                <View
+                    style="@style/horizontalLine">
+                </View>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Answer 1-->
+                    <RadioButton
+                        android:id="@+id/correctAnswer1"
+                        style="@style/answer"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/to_reach_the_mountain_in_the_distance" />
+
+                    <!--Answer 2-->
+                    <RadioButton
+                        android:id="@+id/wrongAnswer1A"
+                        style="@style/answer"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/to_find_the_way_to_the_oasis" />
+
+                    <!--Answer 3-->
+                    <RadioButton
+                        android:id="@+id/wrongAnswer1B"
+                        style="@style/answer"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/to_follow_your_friend_to_the_end_of_the_world" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--Line of image-->
+                <View
+                    style="@style/verticalLine">
+                </View>
+
+                <!--Journey image-->
+                <ImageView
+                    style="@style/image"
+                    android:src="@drawable/journey" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Question-->
+            <TextView
+                style="@style/questionInGray" />
+
+            <!--2-->
+            <TextView
+                style="@style/questionNumber"
+                android:text="@string/_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <!--Limbo question-->
+                <TextView
+                    style="@style/actualQuestion"
+                    android:text="@string/what_type_of_game_is_limbo" />
+
+                <!--Line under question-->
+                <View
+                    style="@style/horizontalLine">
+                </View>
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--Answer 1-->
+                    <RadioButton
+                        android:id="@+id/wrongAnswer2A"
+                        style="@style/answer"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/role_playing_game" />
+
+                    <!--Answer 2-->
+                    <RadioButton
+                        android:id="@+id/wrongAnswer2B"
+                        style="@style/answer"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/survival_horror" />
+
+                    <!--Answer 3-->
+                    <RadioButton
+                        android:id="@+id/correctAnswer2"
+                        style="@style/answer"
+                        android:buttonTint="@color/orange"
+                        android:text="@string/puzzle_platformer" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--Line of image-->
+                <View
+                    style="@style/verticalLine">
+                </View>
+
+                <!--Limbo image-->
+                <ImageView
+                    style="@style/image"
+                    android:src="@drawable/limbo" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Question-->
+            <TextView
+                style="@style/questionInGray" />
+
+            <!--3-->
+            <TextView
+                style="@style/questionNumber"
+                android:text="@string/_3" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <!--Firewatch question-->
+                <TextView
+                    style="@style/actualQuestion"
+                    android:text="@string/in_firewatch_which_of_these_items_can_be_used_by_the_player" />
+
+                <!--Line under question-->
+                <View
+                    style="@style/horizontalLine">
+                </View>
+
+                <!--Answer 1-->
+                <CheckBox
+                    android:id="@+id/wrongAnswer3"
+                    style="@style/answer"
+                    android:buttonTint="@color/orange"
+                    android:text="@string/knife" />
+
+                <!--Answer 2-->
+                <CheckBox
+                    android:id="@+id/correctAnswer3A"
+                    style="@style/answer"
+                    android:buttonTint="@color/orange"
+                    android:text="@string/map" />
+
+                <!--Answer 3-->
+                <CheckBox
+                    android:id="@+id/correctAnswer3B"
+                    style="@style/answer"
+                    android:buttonTint="@color/orange"
+                    android:text="@string/radio" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--Line of image-->
+                <View
+                    style="@style/verticalLine">
+                </View>
+
+                <!--Firewatch image-->
+                <ImageView
+                    style="@style/image"
+                    android:src="@drawable/firewatch" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Question-->
+            <TextView
+                style="@style/questionInGray" />
+
+            <!--4-->
+            <TextView
+                style="@style/questionNumber"
+                android:text="@string/_4" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:orientation="vertical">
+
+                <!--Bastion question-->
+                <TextView
+                    style="@style/actualQuestion"
+                    android:text="@string/which_of_these_buildings_can_be_built_in_bastion" />
+
+                <!--Line under question-->
+                <View
+                    style="@style/horizontalLine">
+                </View>
+
+                <!--Answer 1-->
+                <CheckBox
+                    android:id="@+id/correctAnswer4A"
+                    style="@style/answer"
+                    android:buttonTint="@color/orange"
+                    android:text="@string/memorial" />
+
+                <!--Answer 2-->
+                <CheckBox
+                    android:id="@+id/wrongAnswer4"
+                    style="@style/answer"
+                    android:buttonTint="@color/orange"
+                    android:text="@string/barracks" />
+
+                <!--Answer 3-->
+                <CheckBox
+                    android:id="@+id/correctAnswer4B"
+                    style="@style/answer"
+                    android:buttonTint="@color/orange"
+                    android:text="@string/forge" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--Line of image-->
+                <View
+                    style="@style/verticalLine">
+                </View>
+
+                <!--Bastion image-->
+                <ImageView
+                    style="@style/image"
+                    android:src="@drawable/bastion" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Question-->
+            <TextView
+                style="@style/questionInGray" />
+
+            <!--5-->
+            <TextView
+                style="@style/questionNumber"
+                android:text="@string/_5" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <!--Cuphead question-->
+                <TextView
+                    style="@style/actualQuestion"
+                    android:text="@string/in_cuphead_what_is_the_name_of_cuphead_s_brother" />
+
+                <!--Line under question-->
+                <View
+                    style="@style/horizontalLine">
+                </View>
+
+                <!--Enter answer-->
+                <EditText
+                    android:id="@+id/correctAnswer5"
+                    style="@style/freeAnswer"
+                    android:backgroundTint="@color/orange" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--Line of image-->
+                <View
+                    style="@style/verticalLine">
+                </View>
+
+                <!--Cuphead image-->
+                <ImageView
+                    style="@style/image"
+                    android:src="@drawable/mugman" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--Question-->
+            <TextView
+                style="@style/questionInGray" />
+
+            <!--6-->
+            <TextView
+                style="@style/questionNumber"
+                android:text="@string/_6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <!--Owlboy question-->
+                <TextView
+                    style="@style/actualQuestion"
+                    android:text="@string/in_owlboy_what_is_the_name_of_otus_s_home" />
+
+                <!--Line under question-->
+                <View
+                    style="@style/horizontalLine">
+                </View>
+
+                <!--Enter answer-->
+                <EditText
+                    android:id="@+id/correctAnswer6"
+                    style="@style/freeAnswer"
+                    android:backgroundTint="@color/orange" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--Line of image-->
+                <View
+                    style="@style/verticalLine">
+                </View>
+
+                <!--Owlboy image-->
+                <ImageView
+                    style="@style/image"
+                    android:src="@drawable/owlboy" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_32"
+                android:backgroundTint="@color/orange"
+                android:onClick="submit"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

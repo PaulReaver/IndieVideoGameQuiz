@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Video Game Quiz</string>
+    <string name="video_game_quiz">Video Game Quiz</string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_your_name_here">Enter Your Name Here</string>
+    <string name="_1">1</string>
+    <string name="question">Question</string>
+    <string name="_2">2</string>
+    <string name="indie">Indie</string>
+    <string name="in_journey_what_is_the_goal_of_the_protagonist">In Journey, what is the goal of the protagonist?</string>
+    <string name="to_reach_the_mountain_in_the_distance">To reach the mountain in the distance</string>
+    <string name="to_find_the_way_to_the_oasis">To find the way to the oasis</string>
+    <string name="what_type_of_game_is_limbo">What type of game is Limbo?</string>
+    <string name="role_playing_game">Role-Playing Game</string>
+    <string name="survival_horror">Survival Horror</string>
+    <string name="puzzle_platformer">Puzzle Platformer</string>
+    <string name="_3">3</string>
+    <string name="in_firewatch_which_of_these_items_can_be_used_by_the_player">In Firewatch, which 2 of these items can be used by the player?</string>
+    <string name="knife">Knife</string>
+    <string name="map">Map</string>
+    <string name="radio">Radio</string>
+    <string name="_4">4</string>
+    <string name="which_of_these_buildings_can_be_built_in_bastion">Which 2 of these buildings can be built in Bastion?</string>
+    <string name="barracks">Barracks</string>
+    <string name="memorial">Memorial</string>
+    <string name="forge">Forge</string>
+    <string name="_5">5</string>
+    <string name="in_cuphead_what_is_the_name_of_cuphead_s_brother">In Cuphead, what is the name of Cuphead\'s brother?</string>
+    <string name="enter_your_answer_here">Enter Your Answer Here</string>
+    <string name="_6">6</string>
+    <string name="in_owlboy_what_is_the_name_of_otus_s_home">In Owlboy, what is the name of Otus\'s home?</string>
+    <string name="submit">Submit</string>
+    <string name="to_follow_your_friend_to_the_end_of_the_world">To follow your friend to the end of the world</string>
+</resources>
