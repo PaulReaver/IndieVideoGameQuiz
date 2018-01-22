@@ -70,8 +70,7 @@
             android:orientation="horizontal">
 
             <!--Question-->
-            <TextView
-                style="@style/questionInGray" />
+            <TextView style="@style/questionInGray" />
 
             <!--1-->
             <TextView
@@ -96,11 +95,10 @@
                     android:text="@string/in_journey_what_is_the_goal_of_the_protagonist" />
 
                 <!--Line under question-->
-                <View
-                    style="@style/horizontalLine">
-                </View>
+                <View style="@style/horizontalLine"></View>
 
                 <RadioGroup
+                    android:id="@+id/journeyRadioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -135,9 +133,7 @@
                 android:orientation="horizontal">
 
                 <!--Line of image-->
-                <View
-                    style="@style/verticalLine">
-                </View>
+                <View style="@style/verticalLine"></View>
 
                 <!--Journey image-->
                 <ImageView
@@ -152,8 +148,7 @@
             android:orientation="horizontal">
 
             <!--Question-->
-            <TextView
-                style="@style/questionInGray" />
+            <TextView style="@style/questionInGray" />
 
             <!--2-->
             <TextView
@@ -178,11 +173,10 @@
                     android:text="@string/what_type_of_game_is_limbo" />
 
                 <!--Line under question-->
-                <View
-                    style="@style/horizontalLine">
-                </View>
+                <View style="@style/horizontalLine"></View>
 
                 <RadioGroup
+                    android:id="@+id/limboRadioGroup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -217,9 +211,7 @@
                 android:orientation="horizontal">
 
                 <!--Line of image-->
-                <View
-                    style="@style/verticalLine">
-                </View>
+                <View style="@style/verticalLine"></View>
 
                 <!--Limbo image-->
                 <ImageView
@@ -234,8 +226,7 @@
             android:orientation="horizontal">
 
             <!--Question-->
-            <TextView
-                style="@style/questionInGray" />
+            <TextView style="@style/questionInGray" />
 
             <!--3-->
             <TextView
@@ -260,9 +251,7 @@
                     android:text="@string/in_firewatch_which_of_these_items_can_be_used_by_the_player" />
 
                 <!--Line under question-->
-                <View
-                    style="@style/horizontalLine">
-                </View>
+                <View style="@style/horizontalLine"></View>
 
                 <!--Answer 1-->
                 <CheckBox
@@ -293,9 +282,7 @@
                 android:orientation="horizontal">
 
                 <!--Line of image-->
-                <View
-                    style="@style/verticalLine">
-                </View>
+                <View style="@style/verticalLine"></View>
 
                 <!--Firewatch image-->
                 <ImageView
@@ -310,8 +297,7 @@
             android:orientation="horizontal">
 
             <!--Question-->
-            <TextView
-                style="@style/questionInGray" />
+            <TextView style="@style/questionInGray" />
 
             <!--4-->
             <TextView
@@ -336,9 +322,7 @@
                     android:text="@string/which_of_these_buildings_can_be_built_in_bastion" />
 
                 <!--Line under question-->
-                <View
-                    style="@style/horizontalLine">
-                </View>
+                <View style="@style/horizontalLine"></View>
 
                 <!--Answer 1-->
                 <CheckBox
@@ -369,9 +353,7 @@
                 android:orientation="horizontal">
 
                 <!--Line of image-->
-                <View
-                    style="@style/verticalLine">
-                </View>
+                <View style="@style/verticalLine"></View>
 
                 <!--Bastion image-->
                 <ImageView
@@ -386,8 +368,7 @@
             android:orientation="horizontal">
 
             <!--Question-->
-            <TextView
-                style="@style/questionInGray" />
+            <TextView style="@style/questionInGray" />
 
             <!--5-->
             <TextView
@@ -414,9 +395,7 @@
                     android:text="@string/in_cuphead_what_is_the_name_of_cuphead_s_brother" />
 
                 <!--Line under question-->
-                <View
-                    style="@style/horizontalLine">
-                </View>
+                <View style="@style/horizontalLine"></View>
 
                 <!--Enter answer-->
                 <EditText
@@ -432,9 +411,7 @@
                 android:orientation="horizontal">
 
                 <!--Line of image-->
-                <View
-                    style="@style/verticalLine">
-                </View>
+                <View style="@style/verticalLine"></View>
 
                 <!--Cuphead image-->
                 <ImageView
@@ -449,8 +426,7 @@
             android:orientation="horizontal">
 
             <!--Question-->
-            <TextView
-                style="@style/questionInGray" />
+            <TextView style="@style/questionInGray" />
 
             <!--6-->
             <TextView
@@ -477,9 +453,7 @@
                     android:text="@string/in_owlboy_what_is_the_name_of_otus_s_home" />
 
                 <!--Line under question-->
-                <View
-                    style="@style/horizontalLine">
-                </View>
+                <View style="@style/horizontalLine"></View>
 
                 <!--Enter answer-->
                 <EditText
@@ -495,9 +469,7 @@
                 android:orientation="horizontal">
 
                 <!--Line of image-->
-                <View
-                    style="@style/verticalLine">
-                </View>
+                <View style="@style/verticalLine"></View>
 
                 <!--Owlboy image-->
                 <ImageView
@@ -512,6 +484,7 @@
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
+            <!--Submit answers button-->
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -521,6 +494,21 @@
                 android:onClick="submit"
                 android:text="@string/submit"
                 android:textColor="@color/white" />
+
+            <!--Score-->
+            <TextView
+                style="@style/questionInGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/score" />
+
+            <!--Score number-->
+            <TextView
+                android:id="@+id/scoreView"
+                style="@style/questionNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
