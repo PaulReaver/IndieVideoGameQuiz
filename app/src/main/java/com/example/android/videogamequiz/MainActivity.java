@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*Declaration of variables*/
+    /*Declaration of variables and views*/
     static final String KEY_SCORE = "";
     RadioGroup limboRadioGroup;
     RadioGroup journeyRadioGroup;
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText nameField;
     EditText correctAnswer5;
     EditText correctAnswer6;
+    TextView scoreView;
     int score = 0;
 
     @Override
@@ -35,26 +36,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /*Initializes all views*/
+        initializeViews();
+
         /*Passing the saved state value to the score variable and displays it.*/
         if (savedInstanceState != null) {
             score = savedInstanceState.getInt(KEY_SCORE);
             displayScore(score);
         }
-
-        /*Assigns RadioButtons CheckBoxes and EditTexts to corresponding variables*/
-        limboRadioGroup = (RadioGroup) findViewById(R.id.limboRadioGroup);
-        journeyRadioGroup = (RadioGroup) findViewById(R.id.journeyRadioGroup);
-        correctAnswer1 = (RadioButton) findViewById(R.id.correctAnswer1);
-        correctAnswer2 = (RadioButton) findViewById(R.id.correctAnswer2);
-        wrongAnswer3 = (CheckBox) findViewById(R.id.wrongAnswer3);
-        correctAnswer3A = (CheckBox) findViewById(R.id.correctAnswer3A);
-        correctAnswer3B = (CheckBox) findViewById(R.id.correctAnswer3B);
-        wrongAnswer4 = (CheckBox) findViewById(R.id.wrongAnswer4);
-        correctAnswer4A = (CheckBox) findViewById(R.id.correctAnswer4A);
-        correctAnswer4B = (CheckBox) findViewById(R.id.correctAnswer4B);
-        nameField = (EditText) findViewById(R.id.nameField);
-        correctAnswer5 = (EditText) findViewById(R.id.correctAnswer5);
-        correctAnswer6 = (EditText) findViewById(R.id.correctAnswer6);
     }
 
     /*Saving the instance when screen rotates*/
@@ -68,49 +57,50 @@ public class MainActivity extends AppCompatActivity {
 
     /*Displays the score.*/
     public void displayScore(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.scoreView);
         scoreView.setText(String.valueOf(score));
+    }
+
+    /*Assigns RadioButtons CheckBoxes and EditTexts to corresponding variables*/
+    public void initializeViews() {
+        limboRadioGroup = (RadioGroup) findViewById(R.id.limboRadioGroup);
+        journeyRadioGroup = (RadioGroup) findViewById(R.id.journeyRadioGroup);
+        correctAnswer1 = (RadioButton) findViewById(R.id.correctAnswer1);
+        correctAnswer2 = (RadioButton) findViewById(R.id.correctAnswer2);
+        wrongAnswer3 = (CheckBox) findViewById(R.id.wrongAnswer3);
+        correctAnswer3A = (CheckBox) findViewById(R.id.correctAnswer3A);
+        correctAnswer3B = (CheckBox) findViewById(R.id.correctAnswer3B);
+        wrongAnswer4 = (CheckBox) findViewById(R.id.wrongAnswer4);
+        correctAnswer4A = (CheckBox) findViewById(R.id.correctAnswer4A);
+        correctAnswer4B = (CheckBox) findViewById(R.id.correctAnswer4B);
+        nameField = (EditText) findViewById(R.id.nameField);
+        correctAnswer5 = (EditText) findViewById(R.id.correctAnswer5);
+        correctAnswer6 = (EditText) findViewById(R.id.correctAnswer6);
+        scoreView = (TextView) findViewById(R.id.scoreView);
     }
 
     /*Clears all answers*/
     public void clearAnswers() {
 
-        /*Clears 1st question's answer */
+        /*Clears 1st question's answer*/
         limboRadioGroup.clearCheck();
 
-        /*Clears 2nd question's answer */
+        /*Clears 2nd question's answer*/
         journeyRadioGroup.clearCheck();
 
-        /*Clears 3rd question's answer */
-        if (wrongAnswer3.isChecked()) {
-            wrongAnswer3.setChecked(false);
-        }
+        /*Clears 3rd question's answers*/
+        wrongAnswer3.setChecked(false);
+        correctAnswer3A.setChecked(false);
+        correctAnswer3B.setChecked(false);
 
-        if (correctAnswer3A.isChecked()) {
-            correctAnswer3A.setChecked(false);
-        }
+        /*Clears 4th question's answers*/
+        wrongAnswer4.setChecked(false);
+        correctAnswer4A.setChecked(false);
+        correctAnswer4B.setChecked(false);
 
-        if (correctAnswer3B.isChecked()) {
-            correctAnswer3B.setChecked(false);
-        }
-
-        /*Clears 4th question's answer */
-        if (wrongAnswer4.isChecked()) {
-            wrongAnswer4.setChecked(false);
-        }
-
-        if (correctAnswer4A.isChecked()) {
-            correctAnswer4A.setChecked(false);
-        }
-
-        if (correctAnswer4B.isChecked()) {
-            correctAnswer4B.setChecked(false);
-        }
-
-        /*Clears 5th question's answer */
+        /*Clears 5th question's answer*/
         correctAnswer5.setText("");
 
-        /*Clears 6th question's answer */
+        /*Clears 6th question's answer*/
         correctAnswer6.setText("");
     }
 
@@ -134,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         /*Checks if the name field is empty and shows appropriate message*/
         if (name.isEmpty()) {
-            Toast.makeText(this, "The name field cannot be empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.name_field, Toast.LENGTH_SHORT).show();
             nameIsValid = false;
         }
 
@@ -163,43 +153,43 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /*Checks if question 5 was answered correctly*/
-        if (answer5.equalsIgnoreCase("Mugman")) {
+        if (answer5.equalsIgnoreCase(getString(R.string.mugman))) {
             rightAnswers += 1;
             score += 1500;
         }
 
         /*Checks if question 6 was answered correctly*/
-        if (answer6.equalsIgnoreCase("Vellie")) {
+        if (answer6.equalsIgnoreCase(getString(R.string.vellie))) {
             rightAnswers += 1;
             score += 1800;
         }
 
         /*Text if 0 questions were answered correctly*/
         if (rightAnswers == 0) {
-            message = "you have answered " + rightAnswers + " out of 6 questions correctly.";
-            message = message + " Oops!";
+            message = getString(R.string.you_have_answered) + rightAnswers + getString(R.string.out_of_6_questions_correctly);
+            message = message + getString(R.string.oops);
         }
 
         /*Text if below 3 questions were answered correctly*/
         else if (rightAnswers < 3) {
-            message = "you have answered " + rightAnswers + " out of 6 questions correctly.";
-            message = message + " Nice try, but you can do better than that!";
+            message = getString(R.string.you_have_answered) + rightAnswers + getString(R.string.out_of_6_questions_correctly);
+            message = message + getString(R.string.nice_try);
         }
 
         /*Text if below 6 questions were answered correctly*/
         else if (rightAnswers < 6) {
-            message = "you have answered " + rightAnswers + " out of 6 questions correctly.";
-            message = message + " Good job! Try to get them all next time!";
+            message = getString(R.string.you_have_answered) + rightAnswers + getString(R.string.out_of_6_questions_correctly);
+            message = message + getString(R.string.good_job);
         }
 
         /*Text if all questions were answered correctly*/
         else {
-            message = "you have answered all 6 questions correctly. Congratulations! You really know your indie games!";
+            message = getString(R.string.all_6);
         }
 
         if (nameIsValid) {
             /*Toast message with the results*/
-            Toast.makeText(this, name + " " + message, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, name + getString(R.string.space) + message, Toast.LENGTH_LONG).show();
             displayScore(score);
             clearAnswers();
         } else {
